@@ -40,10 +40,11 @@ class Calc {
                 int toRoman = roman.calculateR(firstR,secondR,operand);
                 String result = roman.arabicRoman(toRoman);
                 System.out.println(result);
-            } else if (arabicNumbers//дописать елси не арабские и не римсике){
-            throw new Exception("OUT OF RANGE 10");
-        }
-        }
+            } else if ((arabicNumbers.contains(first) && romanNumbers.contains(second)) || (arabicNumbers.contains(second) && romanNumbers.contains(first))) {
+            throw new Exception("Different number systems!");
+        } else throw new Exception("Out of range of 1 to 10 OR NaN");
+    }
+
     int romanArabic(String c) {
         HashMap<Character, Integer> map = new HashMap<>();
         map.put('I', 1);
