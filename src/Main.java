@@ -21,7 +21,7 @@ class Calc {
         if (userInput.length <3){
             throw new Exception("No mathematical operations have been identified OR incorrect input format");
         } else if (userInput.length > 3) {
-            throw new Exception("Enter two operands and an arithmetic sign in the format");
+            throw new Exception("Enter two operands and an arithmetic sign in the format: two operands and operand +, -, /, *]");
         }
         String first = userInput[0];
         String second = userInput[2];
@@ -88,9 +88,7 @@ class Calc {
             case "+" -> res = a + b;
             case "-" -> res = a - b;
             case "*" -> res = a * b;
-            case "/" -> {
-                if (b == 0){throw new Exception("Cannot divided by 0");}
-                res = a / b;}
+            case "/" -> res = a / b;
             default -> throw new Exception("Unknown operand");
         }
         return res;
